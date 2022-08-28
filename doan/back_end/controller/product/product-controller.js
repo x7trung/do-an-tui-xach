@@ -84,7 +84,11 @@ exports.delete = (req, res) => {
 }
 
 exports.update = async (req, res) => {
-    if (!req.body) {
+    // if (!req.body) {
+    //     return res.status(400).json({ messenger: "dữ liệu để cập nhật không được để trống" });
+    // }
+
+    if (JSON.stringify(req.body) === '{}') {
         return res.status(400).json({ messenger: "dữ liệu để cập nhật không được để trống" });
     }
     const msp = req.params.msp;
