@@ -169,15 +169,7 @@ exports.create = async (req, res) => {
             res.status(400).send({ messenger: "nội dung không được để trống!" });
             return;
         }
-        const newImport = new supplierDB({
-            name: req.body.name,
-            email: req.body.email,
-            phone: req.body.phone,
-            address: req.body.address,
-            deliver: req.body.deliver,
-            receiver: req.body.receiver,
-            detail: req.body.detail
-        })
+        //
         await newImport.save();
         const newBody = req.body.detail.reduce((acc, cur) => {
             const exist = acc.find(i => i.product_code == cur.product_code)
