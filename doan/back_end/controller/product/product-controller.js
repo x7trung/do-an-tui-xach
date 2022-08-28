@@ -11,6 +11,7 @@ const Features = require("../../lib/feature");
 
 exports.findAll = async (req, res) => {
     // await productDB.updateMany({}, { madeIn: "Trung quốc" })
+    console.log("hello world")
     try {
         const features = new Features(
             productDB.find().populate("image"),
