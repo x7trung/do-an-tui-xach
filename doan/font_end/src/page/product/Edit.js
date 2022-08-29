@@ -94,7 +94,7 @@ const Edit = ({ editProduct }) => {
                     <InputNumber min={0} />
                 </Form.Item>
                 <Form.Item label="Giá bán " name="price" rules={[{ required: true, message: 'Ô giá bán không được để trống!' }]}>
-                    <InputNumber min={1} />
+                    <InputNumber min={editProduct.origin_price} />
                 </Form.Item>
                 <Form.Item label="Giá nhập" name="origin_price" rules={[{ required: true, message: 'Ô giá bán không được để trống!' }]}>
                     <InputNumber min={1} disabled />
